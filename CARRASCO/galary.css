@@ -1,0 +1,277 @@
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #0d2438;
+            --primary: #1e3a54;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --text-light: #ffffff;
+            --text-muted: #d1d5db;
+            --bg-main: #162c40;
+            --bg-dark: #0f1e2c;
+            --bg-light: #1f4060;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-light);
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            width: 100%;
+            background-color: var(--primary-dark);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .ban {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .ban h2 {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .ban a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 8px 20px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin-left: 15px;
+        }
+
+        .ban a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .enca-img {
+            width: 100%;
+            height: 500px;
+            background-image: url(bangala.jpg);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .enca-img:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, rgba(13, 36, 56, 0.8) 0%, rgba(13, 36, 56, 0.6) 100%);
+        }
+
+        .enca-img h1 {
+            font-size: 52px;
+            font-weight: 700;
+            color: var(--text-light);
+            position: relative;
+            z-index: 10;
+            opacity: 0;
+            animation: fadeSlide 1.2s ease-out forwards;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .cont {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .con1, .con2, .con3, .con4 {
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .con1:hover, .con2:hover, .con3:hover, .con4:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--secondary);
+        }
+
+        /* Contenido adicional para las cajas */
+        .service-box {
+            text-align: center;
+        }
+
+        .service-box h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .service-box p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        footer {
+            background-color: var(--primary-dark);
+            padding: 40px 20px;
+            margin-top: 40px;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        @keyframes fadeSlide {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .ban {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .ban h2 {
+                margin-bottom: 15px;
+            }
+            
+            .enca-img h1 {
+                font-size: 42px;
+            }
+            
+            .cont {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .ban a {
+                margin: 5px;
+                display: inline-block;
+            }
+            
+            .enca-img h1 {
+                font-size: 36px;
+            }
+            
+            .con1, .con2, .con3, .con4 {
+                height: auto;
+                min-height: 250px;
+            }
+        }
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+        
+        .whatsapp-float i {
+            margin-top: 0;
+        }
+        
+        /* Animación de pulso para llamar más la atención */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        .whatsapp-float {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Ajustamos la posición en pantallas pequeñas */
+        @media screen and (max-width: 767px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 22px;
+            }
+        }
